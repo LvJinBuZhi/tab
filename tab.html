@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;
+            padding: 0;}
+        body{
+            font-family: "Microsoft YaHei UI";
+        }
+        #tab{
+            width: 600px;
+            margin: 0 auto;
+        }
+        .tab-tit{
+            font-size: 0;
+            width: 600px;
+        }
+        .tab-tit a{
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            width: 25%;
+            text-align: center;
+            background: #ccc;
+            color: #333;
+            text-decoration: none;
+        }
+        .tab-tit .cur{
+            background: #09f;
+            color: #fff;
+        }
+        .tab-con div{
+            border: 1px solid #ccc;
+            height: 400px;
+            padding-top: 0px;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<script src="vue.min.js"></script>
+<div id="tab">
+    <div class="tab-tit">
+        <a href="javascript:;"@click="curId=0" :class="{'cur':curId===0}">女神1</a>
+        <a href="javascript:;"@click="curId=1" :class="{'cur':curId===1}">女神2</a>
+        <a href="javascript:;"@click="curId=2" :class="{'cur':curId===2}">女神3</a>
+        <a href="javascript:;"@click="curId=3" :class="{'cur':curId===3}">女神4</a>
+    </div>
+    <div class="tab-con">
+        <div v-show="curId===0">
+            <img src="images/quanzhixian1.jpg" >
+        </div>
+        <div v-show="curId===1">
+            <img src="images/quanzhixian2.jpg">
+        </div>
+        <div v-show="curId===2">
+            <img src="images/quanzhixian3.jpg">
+        </div>
+        <div v-show="curId===3">
+            <img src="images/quanzhixian4.jpg">
+        </div>
+    </div>
+</div>
+<script>
+    new Vue({
+        el:"#tab",
+        data: {
+            curId: 0
+        },
+        computed:{},
+        method:{},
+        mounted: function () {
+
+        }
+    })
+</script>
+</body>
+</html>
